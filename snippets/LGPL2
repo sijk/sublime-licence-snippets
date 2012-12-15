@@ -1,6 +1,4 @@
-<snippet>
-    <content><![CDATA[
-Copyright (C) ${1:<year>} ${2:<name of author>}
+Copyright (C) ${1:$YEAR} ${2:$USER}
 
 This library is free software; you can redistribute it and/or modify it under
 the terms of the GNU Lesser General Public License as published by the Free
@@ -15,8 +13,3 @@ details.
 You should have received a copy of the GNU Lesser General Public License along
 with this library; if not, write to the Free Software Foundation, Inc., 59
 Temple Place, Suite 330, Boston, MA 02111-1307 USA
-
-]]></content>
-    <tabTrigger>_lgpl</tabTrigger>
-    <description>LGPL v2.1 licence header</description>
-</snippet>
