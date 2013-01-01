@@ -1,0 +1,37 @@
+[
+    {
+        "caption": "Licence Snippet: Apache",
+        "command": "insert_licence",
+        "args": {"name": "Apache"}
+    },
+    {
+        "caption": "Licence Snippet: GPLv2",
+        "command": "insert_licence",
+        "args": {"name": "GPL2"}
+    },
+    {
+        "caption": "Licence Snippet: GPLv3",
+        "command": "insert_licence",
+        "args": {"name": "GPL3"}
+    },
+    {
+        "caption": "Licence Snippet: BSDv2",
+        "command": "insert_licence",
+        "args": {"name": "BSD2"}
+    },
+    {
+        "caption": "Licence Snippet: BSDv3",
+        "command": "insert_licence",
+        "args": {"name": "BSD3"}
+    },
+    {
+        "caption": "Licence Snippet: LGPLv2",
+        "command": "insert_licence",
+        "args": {"name": "LGPL2"}
+    },
+    {
+        "caption": "Licence Snippet: MIT",
+        "command": "insert_licence",
+        "args": {"name": "MIT"}
+    }
+]
