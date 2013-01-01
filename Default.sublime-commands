@@ -15,12 +15,12 @@
         "args": {"name": "GPL3"}
     },
     {
-        "caption": "Licence Snippet: BSDv2",
+        "caption": "Licence Snippet: BSD (2 clause)",
         "command": "insert_licence",
         "args": {"name": "BSD2"}
     },
     {
-        "caption": "Licence Snippet: BSDv3",
+        "caption": "Licence Snippet: BSD (3 clause)",
         "command": "insert_licence",
         "args": {"name": "BSD3"}
     },
