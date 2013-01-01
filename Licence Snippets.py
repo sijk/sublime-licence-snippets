@@ -4,9 +4,21 @@ import re
 
 from collections import Callable
 from datetime import date
-from getpass import getuser
+import platform
 
 from sublime_plugin import TextCommand
+
+def getuser():
+    OS = platform.system()
+    if OS == 'Darwin':
+        import Foundation
+        return Foundation.NSFullUserName()
+    elif OS == 'Linux':
+        import pwd
+        return pwd.getpwuid(os.getuid()).pw_gecos.split(',')[0]
+    else:
+        import getpass
+        return getpass.getuser()
 
 
 # This must be computed on import because of the way ST2 load plugins (__file__
