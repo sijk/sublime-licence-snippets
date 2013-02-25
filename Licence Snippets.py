@@ -9,7 +9,7 @@ import platform
 from sublime_plugin import TextCommand
 
 import sys
-ST3 = False if sys.version_info < (3, 3) else True
+ST3 = sys.version_info >= (3, 3)
 
 def getuser():
     OS = platform.system()
@@ -47,13 +47,9 @@ def inc_placeholder(match):
 
 def load_snippet(file_name):
     # Load the file assuming UTF-8.
-
-    if ST3 is False:
-        with open(os.path.join(SNIPPETS_DIR, file_name), 'rU') as f:
-            text = f.read().decode('utf-8')
-    else:
-        with open(os.path.join(SNIPPETS_DIR, file_name), 'rb') as f:
-            text = f.read().decode('utf-8')
+    mode = 'rb' if ST3 else 'rU'
+    with open(os.path.join(SNIPPETS_DIR, file_name), mode) as f:
+        text = f.read().decode('utf-8')
 
     # Wrap everything in one big tabstop and renumber old tabstops. This is
     # done for technical reasons to support automatic commenting/warpping
@@ -79,13 +75,10 @@ class InsertLicenceCommand(TextCommand):
             raise ValueError('Invalid value for licence_wrap_lines setting')
 
         args = {'contents': load_snippet(name)}
-
-        itms = SNIPPET_VARS.iteritems() if ST3 is False else SNIPPET_VARS.items()
-
-        for key, value in itms:
+        for key, value in SNIPPET_VARS.items():
             if isinstance(value, Callable):
                 value = value()
-            args[key] = unicode(value) if ST3 is False else value # Allow non-text values.
+            args[key] = str(value) if ST3 else unicode(value)
         view.run_command('insert_snippet', args)
 
         # Since load_snippet wraps everything in one big tabstop, the whole
