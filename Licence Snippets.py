@@ -1,6 +1,7 @@
 import os
 import os.path
 import re
+import sublime
 
 from collections import Callable
 from datetime import date
@@ -23,18 +24,22 @@ def getuser():
         import getpass
         return getpass.getuser()
 
+def get_snippet_dir():
+    # This must be computed on import because of the way ST2 load plugins (__file__
+    # ends up being relative to plugin's directory and cwd may change later).
+    SNIPPETS_DIR = os.path.join(sublime.packages_path(), 'Licence Snippets', 'snippets')
 
-# This must be computed on import because of the way ST2 load plugins (__file__
-# ends up being relative to plugin's directory and cwd may change later).
-SNIPPETS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__),
-                                            'snippets'))
+    return SNIPPETS_DIR
 
-# Mapping of additional snippet variable names to their values. If the value is
-# callable, it is called on snippet insertion to compute actual value.
-SNIPPET_VARS = {
-    'YEAR': date.today().year,  # TM_YEAR doesn't seem to be supported.
-    'USER': getuser()  # TM_FULLNAME doesn't seem to be supported.
-}
+
+def get_snippet_vars():
+    # Mapping of additional snippet variable names to their values. If the value is
+    # callable, it is called on snippet insertion to compute actual value.
+    SNIPPET_VARS = {
+        'YEAR': date.today().year,  # TM_YEAR doesn't seem to be supported.
+        'USER': getuser()  # TM_FULLNAME doesn't seem to be supported.
+    }
+    return SNIPPET_VARS
 
 
 def inc_placeholder(match):
@@ -48,7 +53,7 @@ def inc_placeholder(match):
 def load_snippet(file_name):
     # Load the file assuming UTF-8.
     mode = 'rb' if ST3 else 'rU'
-    with open(os.path.join(SNIPPETS_DIR, file_name), mode) as f:
+    with open(os.path.join(get_snippet_dir(), file_name), mode) as f:
         text = f.read().decode('utf-8')
 
     # Wrap everything in one big tabstop and renumber old tabstops. This is
@@ -75,7 +80,7 @@ class InsertLicenceCommand(TextCommand):
             raise ValueError('Invalid value for licence_wrap_lines setting')
 
         args = {'contents': load_snippet(name)}
-        for key, value in SNIPPET_VARS.items():
+        for key, value in get_snippet_vars().items():
             if isinstance(value, Callable):
                 value = value()
             args[key] = str(value) if ST3 else unicode(value)
