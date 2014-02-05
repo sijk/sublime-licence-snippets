@@ -14,12 +14,22 @@ ST3 = sys.version_info >= (3, 3)
 
 def getuser():
     OS = platform.system()
-    if OS == 'Darwin':
+
+    def getuser_osx():
         import Foundation
         return Foundation.NSFullUserName()
-    elif OS == 'Linux':
+
+    def getuser_unix():
         import pwd
         return pwd.getpwuid(os.getuid()).pw_gecos.split(',')[0]
+
+    if OS == 'Darwin':
+        try:
+            return getuser_osx()
+        except:
+            return getuser_unix()
+    elif OS == 'Linux':
+        return getuser_unix()
     else:
         import getpass
         return getpass.getuser()
