@@ -61,7 +61,7 @@ def load_snippet(file_name):
     # inserted text.
     text = re.sub(r'(?:\\\\)*\$(\{)?(?P<num>\d+)(?(1)[:/}]|)', inc_placeholder,
                   text)
-    text = u'${{1:{0}}}'.format(text)
+    text = u'${{1:{0}}}'.format(text).replace('\r\n', '\n')
 
     return text
 

@@ -33,5 +33,10 @@
         "caption": "Licence Snippet: MIT",
         "command": "insert_licence",
         "args": {"name": "MIT"}
+    },
+    {
+        "caption": "Licence Snippet: MPL2",
+        "command": "insert_licence",
+        "args": {"name": "MPL2"}
     }
 ]
