@@ -38,5 +38,10 @@
         "caption": "Licence Snippet: MPL2",
         "command": "insert_licence",
         "args": {"name": "MPL2"}
+    },
+    {
+        "caption": "Licence Snippet: ISC",
+        "command": "insert_licence",
+        "args": {"name": "ISC"}
     }
 ]
