@@ -1,47 +1,117 @@
 [
-    {
-        "caption": "Licence Snippet: Apache",
-        "command": "insert_licence",
-        "args": {"name": "Apache"}
-    },
-    {
-        "caption": "Licence Snippet: GPLv2",
-        "command": "insert_licence",
-        "args": {"name": "GPL2"}
-    },
-    {
-        "caption": "Licence Snippet: GPLv3",
-        "command": "insert_licence",
-        "args": {"name": "GPL3"}
-    },
-    {
-        "caption": "Licence Snippet: BSD (2 clause)",
-        "command": "insert_licence",
-        "args": {"name": "BSD2"}
-    },
-    {
-        "caption": "Licence Snippet: BSD (3 clause)",
-        "command": "insert_licence",
-        "args": {"name": "BSD3"}
-    },
-    {
-        "caption": "Licence Snippet: LGPLv2",
-        "command": "insert_licence",
-        "args": {"name": "LGPL2"}
-    },
-    {
-        "caption": "Licence Snippet: MIT",
-        "command": "insert_licence",
-        "args": {"name": "MIT"}
-    },
-    {
-        "caption": "Licence Snippet: MPL2",
-        "command": "insert_licence",
-        "args": {"name": "MPL2"}
-    },
-    {
-        "caption": "Licence Snippet: ISC",
-        "command": "insert_licence",
-        "args": {"name": "ISC"}
-    }
+  {
+    "caption": "Licence Snippet: Full Text: Artistic Licence v2.0",
+    "command": "insert_licence",
+    "args": {"name": "artistic-2.full"}
+  }
+  {
+    "caption": "Licence Snippet: BP Notice: Apache Licence 2.0",
+    "command": "insert_licence",
+    "args": {"name": "apache-2.bp"}
+  }
+  {
+    "caption": "Licence Snippet: Full Text: Apache Licence 2.0",
+    "command": "insert_licence",
+    "args": {"name": "apache-2.full"}
+  }
+  {
+    "caption": "Licence Snippet: Full Text: BSD Simplified Licence (2-Clause)",
+    "command": "insert_licence",
+    "args": {"name": "bsd-2c.full"}
+  }
+  {
+    "caption": "Licence Snippet: Full Text: BSD Revised Licence (3-Clause)",
+    "command": "insert_licence",
+    "args": {"name": "bsd-3c.full"}
+  }
+  {
+    "caption": "Licence Snippet: Full Text: Eclipse Public Licence v1.0",
+    "command": "insert_licence",
+    "args": {"name": "eclipse-1.full"}
+  }
+  {
+    "caption": "Licence Snippet: BP Notice: GNU Affero GPL v3.0",
+    "command": "insert_licence",
+    "args": {"name": "gnu-agpl-3.bp"}
+  }
+  {
+    "caption": "Licence Snippet: Full Text: GNU Affero GPL v3.0",
+    "command": "insert_licence",
+    "args": {"name": "gnu-agpl-3.full"}
+  }
+  {
+    "caption": "Licence Snippet: BP Notice: GNU GPL v2.0",
+    "command": "insert_licence",
+    "args": {"name": "gnu-gpl-2.bp"}
+  }
+  {
+    "caption": "Licence Snippet: Full Text: GNU GPL v2.0",
+    "command": "insert_licence",
+    "args": {"name": "gnu-gpl-2.full"}
+  }
+  {
+    "caption": "Licence Snippet: BP Notice: GNU GPL v3.0",
+    "command": "insert_licence",
+    "args": {"name": "gnu-gpl-3.bp"}
+  }
+  {
+    "caption": "Licence Snippet: Full Text: GNU GPL v3.0",
+    "command": "insert_licence",
+    "args": {"name": "gnu-gpl-3.full"}
+  }
+  {
+    "caption": "Licence Snippet: BP Notice: GNU LGPL v2.1",
+    "command": "insert_licence",
+    "args": {"name": "gnu-lgpl-21.bp"}
+  }
+  {
+    "caption": "Licence Snippet: Full Text: GNU LGPL v2.1",
+    "command": "insert_licence",
+    "args": {"name": "gnu-lgpl-21.full"}
+  }
+  {
+    "caption": "Licence Snippet: BP Notice: GNU LGPL v3.0",
+    "command": "insert_licence",
+    "args": {"name": "gnu-lgpl-3.bp"}
+  }
+  {
+    "caption": "Licence Snippet: Full Text: GNU LGPL v3.0",
+    "command": "insert_licence",
+    "args": {"name": "gnu-lgpl-3.full"}
+  }
+  {
+    "caption": "Licence Snippet: Full Text: ISC Licence",
+    "command": "insert_licence",
+    "args": {"name": "isc.full"}
+  }
+  {
+    "caption": "Licence Snippet: Full Text: MIT Licence",
+    "command": "insert_licence",
+    "args": {"name": "mit.full"}
+  }
+  {
+    "caption": "Licence Snippet: BP Notice: Mozilla Public Licence v2.0",
+    "command": "insert_licence",
+    "args": {"name": "mozilla-2.bp"}
+  }
+  {
+    "caption": "Licence Snippet: Full Text: Mozilla Public Licence v2.0",
+    "command": "insert_licence",
+    "args": {"name": "mozilla-2.full"}
+  }
+  {
+    "caption": "Licence Snippet: Full Text: Public Domain (CC0 1.0 Universal)",
+    "command": "insert_licence",
+    "args": {"name": "pub-cc0-1-universal.full"}
+  }
+  {
+    "caption": "Licence Snippet: Full Text: Public Domain (UnLicence)",
+    "command": "insert_licence",
+    "args": {"name": "pub-unlicense.full"}
+  }
+  {
+    "caption": "Licence Snippet: Full Text: Public Domain (WTFPL 2.0)",
+    "command": "insert_licence",
+    "args": {"name": "pub-wtfpl-2.full"}
+  }
 ]
