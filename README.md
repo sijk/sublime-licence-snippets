@@ -1,12 +1,13 @@
-Licence snippets for Sublime Text
+Licence Snippets for Sublime Text
 =================================
 
-This package provides the text of several common open-source licences as 
-[Sublime Text](http://www.sublimetext.com/) snippets. It makes inserting 
-licence text in your source files quick and easy. 
+This package provides the full text (for LICENCE files) as well as 
+the recommended header text for several popular open-source licences 
+as [Sublime Text](http://www.sublimetext.com/) snippets. It makes 
+inserting licence text in your source files quick and easy. 
 
-The licences are all taken from the 
-[OSI website](http://opensource.org/licenses/category).
+The licences included in this package are all 
+[OSI-Approved](http://opensource.org/licenses/category).
 
 Feel free to submit an 
 [issue](https://github.com/sijk/sublime-licence-snippets/issues/new) or 
@@ -42,11 +43,17 @@ just install Package Control.
 ### Usage
 
 To insert, for example, the MIT licence in a source file, open the 
-command palette, type *mit* and choose *Licence Snippet: MIT* 
-(or choose *Licence Snippet: MIT* from the snippets menu). The licence 
-text will be inserted at the cursor. The copyright details (year, 
-author, organization, etc.) will be highlighted in turn so that you 
-can easily tab between them and modify them if necessary. 
+command palette, type *mit* and choose *Licence Snippet: MIT [Header] 
+[Full Text]* (or choose *Licence Snippet: MIT [Header] [Full Text]* from 
+the snippets menu). The licence text will be inserted at the cursor. The 
+copyright details (year, author, organization, etc.) will be highlighted 
+in turn so that you can easily tab between them and modify them if 
+necessary. 
+
+- Licences suffixed with *[Header]* are intended to be used in the header 
+section of a file in your project.
+- Licences suffixed with *[Full Text]* are ideally used to fill LICENCE or 
+LICENCE.txt files.
 
 ### Configuration
 
