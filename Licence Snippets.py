@@ -42,12 +42,20 @@ def get_snippet_dir():
     return SNIPPETS_DIR
 
 
-def get_snippet_vars():
+def get_snippet_vars(settings):
     # Mapping of additional snippet variable names to their values. If the value is
     # callable, it is called on snippet insertion to compute actual value.
+    use_name = settings.get('use_name', 'system')
+    if use_name == 'system':
+        author_name = getuser() # TM_FULLNAME doesn't seem to be supported.
+    elif use_name == 'author':
+        author_name = settings.get('author_name', 'add "author_name": "your_name" in preferences->settings(user)')
+    else:
+        raise ValueError('Invalid value for use_name setting')
+
     SNIPPET_VARS = {
         'YEAR': date.today().year,  # TM_YEAR doesn't seem to be supported.
-        'USER': getuser()  # TM_FULLNAME doesn't seem to be supported.
+        'USER': author_name
     }
     return SNIPPET_VARS
 
@@ -90,7 +98,7 @@ class InsertLicenceCommand(TextCommand):
             raise ValueError('Invalid value for licence_wrap_lines setting')
 
         args = {'contents': load_snippet(name)}
-        for key, value in get_snippet_vars().items():
+        for key, value in get_snippet_vars(settings).items():
             if isinstance(value, Callable):
                 value = value()
             args[key] = str(value) if ST3 else unicode(value)
