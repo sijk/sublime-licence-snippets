@@ -63,3 +63,7 @@ for the setting you want to change.
 
 - *licence_comment_style* = *none*, *line*, or *block* (default: *line*)
 - *licence_wrap_lines* = *True* or *False* (default: *False*)
+
+You can switch between system user name and your custom author name.
+- *use_name* = *system* or *author* (default: *system*)
+- *author_name* = *your_name_here* (default: *add "author_name": "your_name" in preferences->settings(user)*)
